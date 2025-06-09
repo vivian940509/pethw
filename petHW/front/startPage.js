@@ -1,0 +1,9 @@
+export default function startPage(){
+    const sp = `
+        <button id="user"  class="custom-btn">領養者基本資料</button>
+        <button id="pet"  class="custom-btn">寵物資料</button>
+        <button id="adopt" class="custom-btn">領養單</button>    
+        <div id="content"></div>
+    `;  
+    return sp;
+}
