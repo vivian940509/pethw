@@ -1,4 +1,4 @@
-import doUpdatepet from './ doUpdatepet.js';
+import doUpdatepet from './doUpdatepet.js';
 
 export default function showpetUpdatePage(id){
 
