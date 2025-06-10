@@ -4,6 +4,7 @@ import doInsertpet from './doInsertpet.js';
 export default function showpetInsertPage(){
     let str = `
         <div class="form-container">
+            <form id="petForm" enctype="multipart/form-data">
             <h2>寵物資料</h2>
             <table class="custom-table">
                 <tr>
@@ -51,6 +52,7 @@ export default function showpetInsertPage(){
                     </td>
                 </tr>
             </table>
+            </form>
         </div>
     `;
     document.getElementById("content").innerHTML = str;

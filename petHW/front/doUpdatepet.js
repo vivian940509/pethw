@@ -1,6 +1,8 @@
 import { BASE_URL } from "./config.js";
 
 export default function doUpdatepet(){
+
+
     let data = {
          "id": document.getElementById("id").value,
          "name": document.getElementById("name").value,
@@ -14,6 +16,7 @@ export default function doUpdatepet(){
      };
      
      axios.post(`${BASE_URL}/index.php?action=updatepet_information`, Qs.stringify(data))
+ main
      .then(res => {
          let response = res['data'];
          document.getElementById("content").innerHTML = response['message'];

@@ -27,6 +27,15 @@ class pet extends Controller
         $age = $_POST['age'] ?? '';
         $description = $_POST['description'] ?? '';
         $photo = $_POST['photo'] ?? '';
+        if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
+            $uploadDir = __DIR__ . '/../../public/uploads/';
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0777, true);
+            }
+            $filename = uniqid() . '_' . basename($_FILES['photo']['name']);
+            move_uploaded_file($_FILES['photo']['tmp_name'], $uploadDir . $filename);
+            $photo = 'uploads/' . $filename;
+        }
         $status = $_POST['status'] ?? 'available';  // 預設為可收養
         $created_by = $_POST['created_by'] ?? '';
         
@@ -62,6 +71,15 @@ class pet extends Controller
         $age = $_POST['age'] ?? '';
         $description = $_POST['description'] ?? '';
         $photo = $_POST['photo'] ?? '';
+        if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
+            $uploadDir = __DIR__ . '/../../public/uploads/';
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0777, true);
+            }
+            $filename = uniqid() . '_' . basename($_FILES['photo']['name']);
+            move_uploaded_file($_FILES['photo']['tmp_name'], $uploadDir . $filename);
+            $photo = 'uploads/' . $filename;
+        }
         $status = $_POST['status'] ?? '';
         $created_by = $_POST['created_by'] ?? '';
         
