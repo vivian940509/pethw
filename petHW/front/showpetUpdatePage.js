@@ -1,5 +1,8 @@
 import doUpdatepet from './doUpdatepet.js';
+
+
 import { BASE_URL } from './config.js';
+main
 
 export default function showpetUpdatePage(id){
 
@@ -78,7 +81,7 @@ export default function showpetUpdatePage(id){
                 };
                 
                 document.getElementById("pet").onclick = function(){
-                    window.history.back();
+                    petInfo();
                 };
                 break;
                 
