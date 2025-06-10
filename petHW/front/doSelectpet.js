@@ -1,6 +1,8 @@
+import { BASE_URL } from "./config.js";
+
 export default function doSelectpet(){
     // 修改 API 端點為寵物相關
-    axios.get("../backend/public/index.php?action=getpet_information")
+    axios.get(`${BASE_URL}/index.php?action=getpet_information`)
     .then(res => {
         let response = res['data'];
         switch(response['status']){

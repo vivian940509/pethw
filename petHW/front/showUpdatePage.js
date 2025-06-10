@@ -1,11 +1,13 @@
 import doUpdate from './doUpdate.js';
+import { BASE_URL } from './config.js';
+
 export default function showUpdatePage(id){
 
     let data = {
         "id": id,
     };
     
-   axios.get("http://localhost/petHW/backend/public/index.php?action=getUsers", Qs.stringify(data))
+   axios.get(`${BASE_URL}/index.php?action=getUsers`, Qs.stringify(data))
     .then(res => {
         let response = res['data'];
         switch(response['status']){

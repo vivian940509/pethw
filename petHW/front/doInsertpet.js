@@ -1,3 +1,5 @@
+import { BASE_URL } from "./config.js";
+
 export default function doInsertpet(){
 let data = {
          // 取得所有寵物表單資料
@@ -17,7 +19,7 @@ let data = {
          return;
      }
 
-    axios.post("../backend/public/index.php?action=newpet_information", Qs.stringify(data))
+    axios.post(`${BASE_URL}/index.php?action=newpet_information`, Qs.stringify(data))
     .then(res => {
         let response = res['data'];
         
