@@ -1,4 +1,5 @@
 import doInsertpet from './doInsertpet.js';
+import petInfo from './petInfo.js';
 
 
 export default function showpetInsertPage(){
@@ -57,7 +58,8 @@ export default function showpetInsertPage(){
     document.getElementById("doInsertpet").onclick = function(){
         doInsertpet();
     };
-    document.getElementById("pet").onclick = function(){
-        window.history.back();
+
+    document.getElementById("backToList").onclick = function(){
+        petInfo();
     };
 }
