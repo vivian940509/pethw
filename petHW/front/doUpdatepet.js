@@ -1,22 +1,22 @@
-export default function doUpdatepet(){
-    const formData = new FormData();
-    formData.append('id', document.getElementById('id').value);
-    formData.append('name', document.getElementById('name').value);
-    formData.append('species', document.getElementById('species').value);
-    formData.append('age', document.getElementById('age').value);
-    formData.append('description', document.getElementById('description').value);
-    const file = document.getElementById('photo').files[0];
-    if (file) {
-        formData.append('photo', file);
-    } else {
-        formData.append('photo', document.getElementById('old_photo').value);
-    }
-    formData.append('status', document.getElementById('status').value);
-    formData.append('created_by', document.getElementById('created_by').value);
+import { BASE_URL } from "./config.js";
 
-     axios.post("http://localhost/petHW/backend/public/index.php?action=updatepet_information", formData, {
-        headers: { 'Content-Type': 'multipart/form-data' }
-     })
+export default function doUpdatepet(){
+
+
+    let data = {
+         "id": document.getElementById("id").value,
+         "name": document.getElementById("name").value,
+         "species": document.getElementById("species").value,
+         "age": document.getElementById("age").value,
+         "description": document.getElementById("description").value,
+         "photo": document.getElementById("photo").value,
+         "status": document.getElementById("status").value,
+         "created_by": document.getElementById("created_by").value
+        //這裡不能使用 .innerText  需要使用 .value、因為 <input> 裡面根本沒有 innerText
+     };
+     
+     axios.post(`${BASE_URL}/index.php?action=updatepet_information`, Qs.stringify(data))
+ main
      .then(res => {
          let response = res['data'];
          document.getElementById("content").innerHTML = response['message'];

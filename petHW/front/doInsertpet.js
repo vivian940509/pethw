@@ -1,3 +1,5 @@
+import { BASE_URL } from "./config.js";
+
 export default function doInsertpet(){
     const formData = new FormData();
     formData.append('id', document.getElementById('id').value);
@@ -17,11 +19,12 @@ export default function doInsertpet(){
         document.getElementById("content").innerHTML =
             `<div class="alert-message alert-error">寵物種類不可為空</div>`;
         return;
-    }
+    
+  
 
-    axios.post("../backend/public/index.php?action=newpet_information", formData, {
-        headers: { 'Content-Type': 'multipart/form-data' }
-    })
+
+    axios.post(`${BASE_URL}/index.php?action=newpet_information`, Qs.stringify(data))
+ main
     .then(res => {
         let response = res['data'];
         

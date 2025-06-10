@@ -1,4 +1,5 @@
 import doUpdatepet from './doUpdatepet.js';
+import { BASE_URL } from './config.js';
 
 export default function showpetUpdatePage(id){
 
@@ -6,7 +7,7 @@ export default function showpetUpdatePage(id){
         "id": id,
     };
 
-   axios.get("http://localhost/petHW/backend/public/index.php?action=getpet_information", {params: data})
+   axios.get(`${BASE_URL}/index.php?action=getpet_information`, {params: data})
     .then(res => {
         let response = res['data'];
         switch(response['status']){

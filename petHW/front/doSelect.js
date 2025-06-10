@@ -1,5 +1,7 @@
+import { BASE_URL } from "./config.js";
+
 export default function doSelect(){
-    axios.get("../backend/public/index.php?action=getUsers")
+    axios.get(`${BASE_URL}/index.php?action=getUsers`)
     .then(res => {
         let response = res['data'];
         switch(response['status']){

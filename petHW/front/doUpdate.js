@@ -1,3 +1,5 @@
+import { BASE_URL } from "./config.js";
+
 export default function doUpdate(){
     let data = {
          "id": document.getElementById("id").value,
@@ -8,7 +10,7 @@ export default function doUpdate(){
         //這裡不能使用 .innerText  需要使用 .value、因為 <input> 裡面根本沒有 innerText
      };
      
-     axios.post("http://localhost/petHW/backend/public/index.php?action=updateUser", Qs.stringify(data))
+     axios.post(`${BASE_URL}/index.php?action=updateUser`, Qs.stringify(data))
      .then(res => {
          let response = res['data'];
          document.getElementById("content").innerHTML = response['message'];
