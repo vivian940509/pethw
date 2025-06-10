@@ -1,3 +1,5 @@
+import { BASE_URL } from "./config.js";
+
 export default function doDeletepet(id){
     // let idValue;
     // for(let i=0; i<id.length; i++){
@@ -8,7 +10,7 @@ export default function doDeletepet(id){
     let data = {
         "id": id,
     };
-    axios.post("../backend/public/index.php?action=removepet_information",Qs.stringify(data))
+    axios.post(`${BASE_URL}/index.php?action=removepet_information`,Qs.stringify(data))
     
     .then(res => {
         let response = res['data'];

@@ -1,3 +1,5 @@
+import { BASE_URL } from "./config.js";
+
 export default function doInsert(){
     let data = {
          // 取得所有表單資料
@@ -21,7 +23,7 @@ export default function doInsert(){
          return;
      }
     
-    axios.post("../backend/public/index.php?action=newUser", Qs.stringify(data))
+    axios.post(`${BASE_URL}/index.php?action=newUser`, Qs.stringify(data))
     .then(res => {
         let response = res['data'];
         

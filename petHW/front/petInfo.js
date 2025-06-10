@@ -2,10 +2,11 @@
 import showInsertPage from "./showpetInsertPage.js";
 import showpetUpdatePage from "./showpetUpdatePage.js";
 import doDeletepet from "./doDeletepet.js";
+import { BASE_URL } from "./config.js";
 
 export default function petInfo(){
     // 錯誤2: 可能缺少錯誤處理，如果後端未運行或 API 路徑錯誤會導致未捕獲的異常
-    axios.get("http://localhost/petHW/backend/public/index.php?action=getpet_information")
+    axios.get(`${BASE_URL}/index.php?action=getpet_information`)
 
     .then(res => {
         let response = res['data'];

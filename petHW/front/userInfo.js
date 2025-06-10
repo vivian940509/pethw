@@ -1,9 +1,10 @@
 import showInsertPage from "./showInsertPage.js";
 import showUpdatePage from "./showUpdatePage.js";
 import doDelete from "./doDelete.js";
+import { BASE_URL } from "./config.js";
 
 export default function userInfo(){
-    axios.get("http://localhost/petHW/backend/public/index.php?action=getUsers")
+    axios.get(`${BASE_URL}/index.php?action=getUsers`)
 
     .then(res => {
         let response = res['data'];
