@@ -15,6 +15,7 @@ export default function showpetUpdatePage(id){
                 const row = rows[0];
                 
                 let str = `<div class="form-container">
+                <form id="petForm" enctype="multipart/form-data">
                 <h2>編輯寵物資料</h2>
                 <table class="custom-table">
                     <tr>
@@ -42,6 +43,7 @@ export default function showpetUpdatePage(id){
                         <td>
                             ${row['photo'] ? `<img src="${row['photo']}" width="100"><br>` : ''}
                             <input type="file" id="photo" accept="image/*">
+                            <input type="hidden" id="old_photo" value="${row['photo'] || ''}">
                         </td>
                     </tr>
                     <tr>
@@ -65,6 +67,7 @@ export default function showpetUpdatePage(id){
                         </td>
                     </tr>
                 </table>
+                </form>
                 </div>`;
 
                 document.getElementById("content").innerHTML = str;
