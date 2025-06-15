@@ -2,7 +2,6 @@ import doUpdatepet from './doUpdatepet.js';
 
 
 import { BASE_URL } from './config.js';
-main
 
 export default function showpetUpdatePage(id){
 
