@@ -23,8 +23,7 @@ export default function doInsertpet(){
   
 
 
-    axios.post(`${BASE_URL}/index.php?action=newpet_information`, Qs.stringify(data))
- main
+    axios.post(`${BASE_URL}/index.php?action=newpet_information`, formData)
     .then(res => {
         let response = res['data'];
         
