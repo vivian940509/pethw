@@ -32,9 +32,7 @@ class pet
     
     public function updatePet($id, $name, $species, $age, $description, $photo, $status, $created_by){
         // 修改表名從 pet 到 pet_information
-        $sql = "UPDATE pet_information 
-                SET name = ?, species = ?, age = ?, description = ?, photo = ?, status = ?, created_by = ? 
-                WHERE id = ?";
+        $sql = "UPDATE pet_information SET name = ?, species = ?, age = ?, description = ?, photo = ?, status = ?, created_by = ? WHERE id = ?";
         return DB::update($sql, array($name, $species, $age, $description, $photo, $status, $created_by, $id));
     }
 }
